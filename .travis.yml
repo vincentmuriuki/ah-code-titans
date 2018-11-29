@@ -31,4 +31,3 @@ after_success:
 # slack notifications configuration
 notifications:
     slack: andela:LTXqtmTsixouhMtsFDOPnaY5
-    
