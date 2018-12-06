@@ -59,3 +59,24 @@ h2 {
     background-color: rgb(0, 128, 129) !important;
     color: #fff !important;
 }
+
+/* Styling for the request_form page */
+.email_form {
+    margin: 0 25%;
+    height: 40vh;
+    /* font-size:1.5em; */
+    padding: 60px 10%;
+    width: 50%;
+    text-align: center;
+    box-shadow: 0 0 80px 20px #cecece75;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.back_home {
+    color: fff;
+    text-decoration: none;
+}
+.back_home:hover{
+    color:fff;
+}
