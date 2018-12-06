@@ -1,6 +1,8 @@
+import re
 from django.contrib.auth import authenticate
 
 from rest_framework import serializers
+from rest_framework.validators import UniqueValidator
 
 # local imports
 from .models import User
@@ -16,9 +18,62 @@ class RegistrationSerializer(serializers.ModelSerializer):
     password = serializers.CharField(
         max_length=128,
         min_length=8,
-        write_only=True
+        write_only=True,
+        required=True,
+        error_messages={
+            'min_length': 'Please provide a password with at least 8 characters.',
+            'required': 'Please provide a password.'
+        }
     )
 
+    # Ensure the password has alphanumeric characters
+    def validate_password(self, data):
+        """
+        validator function to check for valid password.
+        """
+        # Ensure the password contains at least one number,
+        # at least one uppercase letter
+        # at least one lowercase letter
+        # at least one special character.
+        num = re.match(r"^(?=.*[0-9])", data)
+        caps = re.match(r"^(?=.*[A-Z])", data)
+        lower = re.match(r"^(?=.*[a-z])", data)
+        special = re.match(r"^(?=.*[\!\@#\$%\^&\.])", data)
+
+        if not num or not caps or not lower or not special:
+            raise serializers.ValidationError(
+                'Password should have at least one number, '
+                'an uppercase or lowercase letter or one special character.')
+        return data
+
+    # Ensure email entered by the user upon
+    # registration has not been used before.
+    email = serializers.EmailField(
+        validators=[
+            UniqueValidator(
+                queryset=User.objects.all(),
+                message=(
+                    'Email is already registered. '
+                    'Have you tried logging in?'
+                )
+            )
+        ]
+    )
+
+    # Ensure the username has at least 4 characters
+    # and does not contain numbers only.
+    def validate_username(self, data):
+        """
+        Validator function to check for valid username
+        """
+        # Ensure the username is at least 4 characters long
+        # and does not contain numbers only.
+        if re.match(r"^[0-9]*$", data) or len(data) < 4:
+            raise serializers.ValidationError(
+                'Username should be at least 4 characters long '
+                'and should not contain numbers only.'
+                )
+        return data
     # token fields
     token = serializers.SerializerMethodField()
     refresh_token = serializers.SerializerMethodField()
