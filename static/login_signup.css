@@ -79,3 +79,9 @@ h2 {
 .back_home:hover{
     color:fff;
 }
+
+/* Create article styling */
+.center_content{
+    margin-left:43%;
+    padding-top: 5%;
+}
