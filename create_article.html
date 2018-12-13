@@ -1,0 +1,65 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Authors-Haven</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href=" https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900 " rel="stylesheet ">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:900" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
+          crossorigin="anonymous" />
+        <link rel="stylesheet" type="text/css" media="screen" href="static/login_signup.css">
+      </head>
+<body>
+    <div class="ui menu">
+        <div class="header item">
+            Authors Haven
+        </div>
+        <a class="item">
+            Articles
+        </a>
+        <a class="item">
+            Best Rated
+        </a>
+        <div class="ui simple dropdown item">
+                Major Topics<i class="dropdown icon"></i>
+                <div class="menu">
+                  <a class="item" href="#">Technology</a>
+                  <a class="item" href="#">Art</a>
+                  <div class="divider"></div>
+                  <div class="header">History</div>
+                  <a class="item" href="#">Love</a>
+                </div>
+              </div>
+        <div class="right menu">
+            <a class="item"><i class="user circle icon"></i></a>
+            <a class="item">Logout</a>
+            </div>
+    </div>
+    <section>
+        <div class="ui container main">
+            <div class="ui">
+                <h3>Write your story.....</h3>
+                <div>
+                    <p id="editor1"></p>
+                </div>
+                <div class="center_content">
+                    <div class="ui buttons ">
+                            <button class="ui button">Cancel</button>
+                            <div class="or"></div>
+                            <button class="ui positive button">Save</button>
+                    </div>
+                    <script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+                    <script>
+                        CKEDITOR.replace( 'editor1' );
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+</body>
+</html>

@@ -53,3 +53,16 @@
      margin: 5em 0em 0em;
      padding: 5em 0em;
  }
+
+ .article__body{
+     margin-bottom: 5rem;
+ }
+
+ .article__image{
+     max-height: 40rem;
+     margin:3rem 0;
+     float:left;
+     object-fit: cover;
+     object-position: center;
+     overflow: hidden;
+ }
