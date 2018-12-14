@@ -82,6 +82,11 @@ h2 {
 
 /* Create article styling */
 .center_content{
-    margin-left:43%;
+    margin-left:40%;
     padding-top: 5%;
+}
+.article_width{
+    width:60%;
+    transform: translateX(-50%);
+    margin-left:50%;
 }
