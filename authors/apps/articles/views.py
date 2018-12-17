@@ -1,12 +1,11 @@
 from rest_framework.generics import CreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
-from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, generics
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, AllowAny
 
 from django.shortcuts import get_object_or_404
 
-from .serializers import CommentSerializer, ArticlesSerializer
+from .serializers import CommentSerializer, ArticleSerializer
 from .models import Comment, Article
 from authors.response import RESPONSE
 
@@ -27,7 +26,7 @@ class ArticlesViews(CreateAPIView):
         """
         data = request.data.get("article", {})
         context = {'request': request}
-        serializer = ArticlesSerializer(data=data, context=context)
+        serializer = ArticleSerializer(data=data, context=context)
         if serializer.is_valid():
             article_data = serializer.save()
             message = {
@@ -51,9 +50,9 @@ class ArticleView(RetrieveUpdateDestroyAPIView):
         an author can only update his/her article
         """
         article = get_object_or_404(Article.objects.all(), slug=slug)
-        ArticlesSerializer().validate_user_permissions(request, article)
+        ArticleSerializer().validate_user_permissions(request, article)
         data = request.data.get("article")
-        serializer = ArticlesSerializer(
+        serializer = ArticleSerializer(
             instance=article, data=data, partial=True)
         serializer.is_valid()
         serializer.save()
@@ -133,7 +132,7 @@ class CommentsView(generics.ListCreateAPIView):
         # This tries to fetch a list of reply comments for the specified comment,
         # from the database. If the comment id provided does not match any in
         # the database, an error 404 response is sent back to the API user.
-        comments = Comment.objects.filter(article__slug=article_slug)[
+        comments = Comment.objects.filter(article__slug=article_slug, parent=0)[
             offset:page_size]
 
         if not comments:

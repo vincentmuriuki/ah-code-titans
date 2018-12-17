@@ -1,16 +1,13 @@
+from authors.apps.authentication.models import User
+from authors.response import RESPONSE
+from rest_framework.response import Response
+from rest_framework import status
 from rest_framework import serializers
+
 from .models import Article, Comment
 
-from authors.response import RESPONSE
-from authors.apps.authentication.models import User
 
-
-class ArticlesSerializer(serializers.ModelSerializer):
-    """
-    :param HiddenField does not take an input from the user but instead from a callable or default value.
-    its useful especially when we have a unique constraint.
-    :CurrentUserDefault gets the request context of the the current user
-    """
+class ArticleSerializer(serializers.ModelSerializer):
     author = serializers.HiddenField(
         default=serializers.CurrentUserDefault()
     )
