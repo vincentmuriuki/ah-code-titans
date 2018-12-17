@@ -29,7 +29,10 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/image.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.css">
 
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.js">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.min.js"> -->
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/divider.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/list.css">
@@ -92,7 +95,6 @@
   <div class="ui main text container">
     <h1 class="ui header centered">Sticky Example</h1>
     <p class="ui text full centered">By: John Doe</p>
-    <div class="ui star rating" data-rating="3"></div>
      <div class="ui labeled button" tabindex="0">
       <div class="ui button">
         <i class="heart icon"></i> Like
@@ -101,16 +103,20 @@
         2,048
       </a>
   </div>
+  <p>Current Rating</p>
+      <div class="ui rating">
+          <i class="icon"></i>
+          <i class="icon"></i>
+          <i class="icon"></i>
+          <i class="icon"></i>
+          <i class="icon"></i>
+        </div>
     <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
   </div>
 
   <div class="ui full article__image">
     <img class="ui full image visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
   </div>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 
   <div class="ui text container article__body">
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
@@ -243,7 +249,16 @@
       pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
       vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
       luctus, metus</p>
+      <p>Rate the article</p>
+      <div class="ui rating">
+          <i class="icon"></i>
+          <i class="icon"></i>
+          <i class="icon"></i>
+          <i class="icon"></i>
+          <i class="icon"></i>
+        </div>
   </div>
+  
 
   <div class="ui comments centered full">
     <h3 class="ui dividing header">Comments</h3>
