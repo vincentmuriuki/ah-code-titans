@@ -8,6 +8,7 @@ from rest_framework import status
 from rest_framework import serializers
 
 from .models import Article, Comment
+from ..favorite.models import FavouriteArticle
 
 
 class ArticleSerializer(serializers.ModelSerializer):
@@ -47,6 +48,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 class GetArticlesSerializer(serializers.ModelSerializer):
 
     author = serializers.SerializerMethodField()
+    favorite = serializers.SerializerMethodField()
 
     class Meta:
         model = Article
@@ -62,6 +64,13 @@ class GetArticlesSerializer(serializers.ModelSerializer):
         }
 
         return author
+
+    def get_favorite(self, slug):
+        user = self.context.get('request').user.id
+        article = slug.id
+        favorite = FavouriteArticle.objects.filter(user=user, article=article).exists()
+
+        return favorite
 
 
 class CommentSerializer(serializers.ModelSerializer):
