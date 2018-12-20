@@ -67,7 +67,33 @@
      overflow: hidden;
  }
 
+ .article__bottom{
+     height: 5rem;
+     margin-bottom: 5rem;
+ }
+
  .comments {
      width: 60%;
  }
  
+ /* Read time styling  */
+.time_to_read{
+    color:#008080;
+    padding:.3rem 1rem;
+    float:right;
+    border: 1px solid #008080;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.content_right{
+    margin-top: 50%;
+}
+
+.article__rating{
+    float:left;
+}
+
+.article__sharing{
+    float:right;
+}
