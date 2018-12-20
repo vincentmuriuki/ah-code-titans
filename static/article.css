@@ -66,3 +66,17 @@
      object-position: center;
      overflow: hidden;
  }
+
+ /* Read time styling  */
+.time_to_read{
+    color:#008080;
+    padding:5px;
+    margin-left: 80%;
+    border: 1px solid #008080;
+    border-radius: 25px;
+    text-align: center;
+}
+.content_right{
+    float:right;
+    margin-top: 50%;
+}

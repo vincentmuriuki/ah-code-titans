@@ -47,8 +47,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/visibility.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="/static/article.css">
-
+  <link rel="stylesheet" type="text/css" href="static/article.css">
+  <!-- <link rel="stylesheet" type="text/css" href="static/login_signup.css"> -->
 </head>
 
 <body data-gr-c-s-loaded="true">
@@ -103,15 +103,16 @@
         2,048
       </a>
   </div>
-  <p>Current Rating</p>
-      <div class="ui rating">
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-        </div>
+  <div>
+      <p>Current Rating</p>
+      <div class="ui star rating" data-rating="3" data-max-rating="5"></div>
+  </div>
     <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
+
+    <div class="time_to_read">
+      <i class="clock icon"></i> 6 Minutes
+    </div>
+
   </div>
 
   <div class="ui full article__image">
@@ -362,6 +363,7 @@
       </div>
     </div>
 
+    <script src="static/rating.js"></script>
 
 
 </body>
