@@ -29,10 +29,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/image.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/menu.css">
 
-  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.js">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.min.js"> -->
 
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/divider.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/list.css">
@@ -54,19 +51,35 @@
 <body data-gr-c-s-loaded="true">
 
   <!-- Header Component -->
-  <div class="ui borderless main menu" style="">
-    <div class="ui text container">
+  <div class="ui borderless main menu">
+    <div class="ui container">
       <div class="header item">
         Authors Haven
       </div>
 
-      <a href="#" class="item right floated">Home</a>
-      <a href="#" class="item right floated">Discover</a>
+      <div class="ui secondary menu right aligned">
+        <a class="active item">
+          Home
+        </a>
+        <a class="item">
+          Discover
+        </a>
 
-      <div class="header item right floated">
-        User
-        <img class="logo" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        <div class="right menu">
+          <div class="item">
+            <div class="ui icon input">
+              <input type="text" placeholder="Search...">
+              <i class="search link icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="header item right floated">
+          User
+          <img class="logo" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -92,260 +105,426 @@
 
   <!-- Header Placeholder Component -->
 
+  <!-- Article Top -->
+
   <div class="ui main text container">
+
+    <!-- Article Title -->
+
     <h1 class="ui header centered">Sticky Example</h1>
+
+    <!-- Article Title -->
+
+    <!-- Article Details -->
+
     <p class="ui text full centered">By: John Doe</p>
-     <div class="ui labeled button" tabindex="0">
+    <div class="ui labeled button" tabindex="0">
       <div class="ui button">
         <i class="heart icon"></i> Like
       </div>
       <a class="ui basic label">
         2,048
       </a>
+    </div>
+
+    <div class="ui star rating right aligned" data-rating="3" data-max-rating="5"></div>
+
+    <div class="ui time_to_read right aligned">
+      <i class="clock icon"></i> 6 Minutes
+    </div>
+    <!-- Article Details -->
+
   </div>
-  <p>Current Rating</p>
-      <div class="ui rating">
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-        </div>
-    <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
-  </div>
+
+  <!-- Article Top -->
+
+  <!-- Article Image -->
 
   <div class="ui full article__image">
     <img class="ui full image visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
   </div>
 
-  <div class="ui text container article__body">
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <div class="overlay" style="">
-      <div class="ui labeled icon vertical menu">
-        <a class="item"><i class="twitter icon"></i> Tweet</a>
-        <a class="item"><i class="facebook icon"></i> Share</a>
-        <a class="item"><i class="mail icon"></i> E-mail</a>
-      </div>
+  <!-- Article Image -->
+
+  <!-- Article Body -->
+
+  <div class="ui container article__body">
+
+    <div class="ui text container">
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <img class="ui medium left floated image transition visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo.
+        <img class="ui medium right floated image transition visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
+        Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae,
+        ornare
+        sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus
+        lacus
+        enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,
+        tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,
+        accumsan porttitor, facilisis luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <img class="ui medium left floated image transition visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo.
+        <img class="ui medium right floated image transition visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
+        Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae,
+        ornare
+        sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus
+        lacus
+        enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,
+        tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,
+        accumsan porttitor, facilisis luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
+      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum
+        tortor
+        quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
+        Aenean
+        ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
+        Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
+        tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
+        pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
+        vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
+        luctus, metus</p>
     </div>
-    <div class="overlay placeholder" style="display: none;">
-      <div class="ui labeled icon vertical menu">
-        <a class="item"><i class="twitter icon"></i> Tweet</a>
-        <a class="item"><i class="facebook icon"></i> Share</a>
-        <a class="item"><i class="mail icon"></i> E-mail</a>
-      </div>
-    </div>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <img class="ui medium left floated image transition visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo.
-      <img class="ui medium right floated image transition visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
-      Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare
-      sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus
-      enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,
-      tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,
-      accumsan porttitor, facilisis luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <img class="ui medium left floated image transition visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo.
-      <img class="ui medium right floated image transition visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
-      Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare
-      sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus
-      enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus,
-      tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis,
-      accumsan porttitor, facilisis luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
-      quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
-      ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra.
-      Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget
-      tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis
-      pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu
-      vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis
-      luctus, metus</p>
-      <p>Rate the article</p>
-      <div class="ui rating">
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-          <i class="icon"></i>
-        </div>
+
   </div>
-  
 
-  <div class="ui comments centered full">
-    <h3 class="ui dividing header">Comments</h3>
+  <!-- Article Body -->
+
+  <!-- Article Bottom -->
+
+  <div class="ui text container article__bottom">
+    <div class="article__rating">
+      <p>Rate the article :</p>
+      <div class="ui rating left floated">
+        <i class="icon"></i>
+        <i class="icon"></i>
+        <i class="icon"></i>
+        <i class="icon"></i>
+        <i class="icon"></i>
+      </div>
+    </div>
     
-    <div class="comment">
-      <a class="avatar">
-        <img src="/images/avatar/small/matt.jpg">
-      </a>
-      <div class="content">
-        <a class="author">Matt</a>
-        <div class="metadata">
-          <span class="date">Today at 5:42PM</span>
-        </div>
-        <div class="text">
-          How artistic!
-        </div>
-        <div class="actions">
-          <a class="reply">Reply</a>
-        </div>
+
+    <div class="article__sharing overlay">
+      <div class="ui icon">
+        <button class="ui circular facebook icon button">
+          <i class="facebook icon"></i>
+        </button>
+        <button class="ui circular twitter icon button">
+          <i class="twitter icon"></i>
+        </button>
+        <button class="ui circular linkedin icon button">
+          <i class="linkedin icon"></i>
+        </button>
+        <button class="ui circular mail icon button">
+          <i class="mail icon"></i>
+        </button>
       </div>
     </div>
 
-    <div class="comment">
-      <a class="avatar">
-        <img src="/images/avatar/small/elliot.jpg">
-      </a>
-      <div class="content">
-        <a class="author">Elliot Fu</a>
-        <div class="metadata">
-          <span class="date">Yesterday at 12:30AM</span>
+  </div>
+
+  <!-- Article Bottom -->
+
+
+  <!-- Comment Section -->
+
+  <div class="ui text container">
+    <div class="ui comments container full">
+      <h3 class="ui dividing header">Add a comment</h3>
+
+      <form class="ui reply form">
+        <div class="field">
+          <textarea></textarea>
         </div>
-        <div class="text">
-          <p>This has been very useful for my research. Thanks as well!</p>
+        <div class="ui blue labeled submit icon button">
+          <i class="icon edit"></i> Add Comment
         </div>
-        <div class="actions">
-          <a class="reply">Reply</a>
+      </form>
+
+      <h3 class="ui dividing header">Comments</h3>
+
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Matt</a>
+          <div class="metadata">
+            <span class="date">Today at 5:42PM</span>
+          </div>
+          <div class="text">
+            How artistic!
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+          </div>
+
+          <!-- Reply Form -->
+
+          <form class="ui reply form">
+            <div class="field">
+              <textarea rows="2"></textarea>
+            </div>
+            <div class="ui primary labeled submit icon button">
+              <i class="icon edit"></i> Add Reply
+            </div>
+          </form>
+
+          <!-- Reply Form -->
         </div>
       </div>
-      <div class="comments">
-        <div class="comment">
-          <a class="avatar">
-            <img src="/images/avatar/small/jenny.jpg">
-          </a>
-          <div class="content">
-            <a class="author">Jenny Hess</a>
-            <div class="metadata">
-              <span class="date">Just now</span>
-            </div>
-            <div class="text">
-              Elliot you are always so right :)
-            </div>
-            <div class="actions">
-              <a class="reply">Reply</a>
+
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Elliot Fu</a>
+          <div class="metadata">
+            <span class="date">Yesterday at 12:30AM</span>
+          </div>
+          <div class="text">
+            <p>This has been very useful for my research. Thanks as well!</p>
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+          </div>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <a class="avatar">
+              <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+            </a>
+            <div class="content">
+              <a class="author">Jenny Hess</a>
+              <div class="metadata">
+                <span class="date">Just now</span>
+              </div>
+              <div class="text">
+                Elliot you are always so right :)
+              </div>
+              <div class="actions">
+                <a class="reply">Reply</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="comment">
-      <a class="avatar">
-        <img src="/images/avatar/small/joe.jpg">
-      </a>
-      <div class="content">
-        <a class="author">Joe Henderson</a>
-        <div class="metadata">
-          <span class="date">5 days ago</span>
-        </div>
-        <div class="text">
-          Dude, this is awesome. Thanks so much
-        </div>
-        <div class="actions">
-          <a class="reply">Reply</a>
-        </div>
-      </div>
-    </div>
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Joe Henderson</a>
+          <div class="metadata">
+            <span class="date">5 days ago</span>
+          </div>
+          <div class="text">
+            Dude, this is awesome. Thanks so much
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+            <a class="edit">Edit</a>
+          </div>
 
-    <form class="ui reply form">
-      <div class="field">
-        <textarea></textarea>
+        </div>
       </div>
-      <div class="ui blue labeled submit icon button">
-        <i class="icon edit"></i> Add Reply
+
+
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Joe Henderson</a>
+          <div class="metadata">
+            <span class="date">4 days ago</span>
+          </div>
+          <div class="text">
+            Dude, this is awesome. Thanks so much
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+            <a class="edit">Edit</a>
+          </div>
+
+        </div>
       </div>
-    </form>
+
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Joe Henderson</a>
+          <div class="metadata">
+            <span class="date">3 days ago</span>
+          </div>
+          <div class="text">
+            Dude, this is awesome. Thanks so much
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+            <a class="edit">Edit</a>
+          </div>
+
+          <!-- Reply Form -->
+
+          <form class="ui reply form">
+            <div class="field">
+              <textarea rows="2">Dude, this is awesome. Thanks so much</textarea>
+            </div>
+            <div class="ui primary labeled submit icon button">
+              <i class="icon edit"></i> Edit Comment
+            </div>
+          </form>
+
+          <!-- Reply Form -->
+
+          <h4 class="ui dividing header">Edit History</h4>
+
+          <div class="comment">
+            <a class="avatar">
+              <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+            </a>
+            <div class="content">
+              <a class="author">Joe Henderson</a>
+              <div class="metadata">
+                <span class="date">4 days ago</span>
+              </div>
+              <div class="text">
+                Dude, this is awesome. Thanks so much
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
 
   </div>
+
+  <!-- Comment Section -->
+
 
   <div class="ui inverted vertical footer segment">
     <div class="ui center aligned container">
@@ -362,7 +541,8 @@
       </div>
     </div>
 
-
+    <script src="static/rating.js"></script>
+  </div>
 
 </body>
 
