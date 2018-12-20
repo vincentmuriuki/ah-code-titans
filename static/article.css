@@ -66,3 +66,8 @@
      object-position: center;
      overflow: hidden;
  }
+
+ .comments {
+     width: 60%;
+ }
+ 

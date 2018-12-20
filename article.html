@@ -51,19 +51,35 @@
 <body data-gr-c-s-loaded="true">
 
   <!-- Header Component -->
-  <div class="ui borderless main menu" style="">
-    <div class="ui text container">
+  <div class="ui borderless main menu">
+    <div class="ui container">
       <div class="header item">
         Authors Haven
       </div>
 
-      <a href="#" class="item right floated">Home</a>
-      <a href="#" class="item right floated">Discover</a>
+      <div class="ui secondary menu right aligned">
+        <a class="active item">
+          Home
+        </a>
+        <a class="item">
+          Discover
+        </a>
 
-      <div class="header item right floated">
-        User
-        <img class="logo" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        <div class="right menu">
+          <div class="item">
+            <div class="ui icon input">
+              <input type="text" placeholder="Search...">
+              <i class="search link icon"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="header item right floated">
+          User
+          <img class="logo" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </div>
       </div>
+
     </div>
   </div>
 
@@ -93,21 +109,25 @@
     <h1 class="ui header centered">Sticky Example</h1>
     <p class="ui text full centered">By: John Doe</p>
     <div class="ui star rating" data-rating="3"></div>
-     <div class="ui labeled button" tabindex="0">
+    <div class="ui labeled button" tabindex="0">
       <div class="ui button">
         <i class="heart icon"></i> Like
       </div>
       <a class="ui basic label">
         2,048
       </a>
-  </div>
-    <p>This example shows how to use lazy loaded images, a sticky menu, and a simple text container</p>
+    </div>
+    
   </div>
 
   <div class="ui full article__image">
     <img class="ui full image visible" data-src="./static/back--2.jpg" src="./static/back--2.jpg">
   </div>
-  
+
+  <div>
+
+
+  </div>
   <div class="ui text container article__body">
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor
       quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean
@@ -241,93 +261,168 @@
       luctus, metus</p>
   </div>
 
-  <!-- <div class="ui comments centered full">
-    <h3 class="ui dividing header">Comments</h3>
-    
-    <div class="comment">
-      <a class="avatar">
-        <img src="/images/avatar/small/matt.jpg">
-      </a>
-      <div class="content">
-        <a class="author">Matt</a>
-        <div class="metadata">
-          <span class="date">Today at 5:42PM</span>
-        </div>
-        <div class="text">
-          How artistic!
-        </div>
-        <div class="actions">
-          <a class="reply">Reply</a>
-        </div>
-      </div>
-    </div>
+  <div class="ui one column stackable center aligned page grid">
+    <div class="ui column comments left aligned full">
+      <h3 class="ui dividing header">Add a comment</h3>
 
-    <div class="comment">
-      <a class="avatar">
-        <img src="/images/avatar/small/elliot.jpg">
-      </a>
-      <div class="content">
-        <a class="author">Elliot Fu</a>
-        <div class="metadata">
-          <span class="date">Yesterday at 12:30AM</span>
+      <form class="ui reply form">
+        <div class="field">
+          <textarea></textarea>
         </div>
-        <div class="text">
-          <p>This has been very useful for my research. Thanks as well!</p>
+        <div class="ui blue labeled submit icon button">
+          <i class="icon edit"></i> Add Comment
         </div>
-        <div class="actions">
-          <a class="reply">Reply</a>
+      </form>
+
+      <h3 class="ui dividing header">Comments</h3>
+
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Matt</a>
+          <div class="metadata">
+            <span class="date">Today at 5:42PM</span>
+          </div>
+          <div class="text">
+            How artistic!
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+          </div>
+
+          <!-- Reply Form -->
+
+          <form class="ui reply form">
+            <div class="field">
+              <textarea rows="2"></textarea>
+            </div>
+            <div class="ui primary labeled submit icon button">
+              <i class="icon edit"></i> Add Reply
+            </div>
+          </form>
+
+          <!-- Reply Form -->
         </div>
       </div>
-      <div class="comments">
-        <div class="comment">
-          <a class="avatar">
-            <img src="/images/avatar/small/jenny.jpg">
-          </a>
-          <div class="content">
-            <a class="author">Jenny Hess</a>
-            <div class="metadata">
-              <span class="date">Just now</span>
-            </div>
-            <div class="text">
-              Elliot you are always so right :)
-            </div>
-            <div class="actions">
-              <a class="reply">Reply</a>
+
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Elliot Fu</a>
+          <div class="metadata">
+            <span class="date">Yesterday at 12:30AM</span>
+          </div>
+          <div class="text">
+            <p>This has been very useful for my research. Thanks as well!</p>
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+          </div>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <a class="avatar">
+              <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+            </a>
+            <div class="content">
+              <a class="author">Jenny Hess</a>
+              <div class="metadata">
+                <span class="date">Just now</span>
+              </div>
+              <div class="text">
+                Elliot you are always so right :)
+              </div>
+              <div class="actions">
+                <a class="reply">Reply</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="comment">
-      <a class="avatar">
-        <img src="/images/avatar/small/joe.jpg">
-      </a>
-      <div class="content">
-        <a class="author">Joe Henderson</a>
-        <div class="metadata">
-          <span class="date">5 days ago</span>
-        </div>
-        <div class="text">
-          Dude, this is awesome. Thanks so much
-        </div>
-        <div class="actions">
-          <a class="reply">Reply</a>
-        </div>
-      </div>
-    </div>
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Joe Henderson</a>
+          <div class="metadata">
+            <span class="date">5 days ago</span>
+          </div>
+          <div class="text">
+            Dude, this is awesome. Thanks so much
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+            <a class="edit">Edit</a>
+          </div>
 
-    <form class="ui reply form">
-      <div class="field">
-        <textarea></textarea>
+        </div>
       </div>
-      <div class="ui blue labeled submit icon button">
-        <i class="icon edit"></i> Add Reply
+
+
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Joe Henderson</a>
+          <div class="metadata">
+            <span class="date">4 days ago</span>
+          </div>
+          <div class="text">
+            Dude, this is awesome. Thanks so much
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+            <a class="edit">Edit</a>
+          </div>
+
+        </div>
       </div>
-    </form>
+
+      <div class="comment">
+        <a class="avatar">
+          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        </a>
+        <div class="content">
+          <a class="author">Joe Henderson</a>
+          <div class="metadata">
+            <span class="date">3 days ago</span>
+          </div>
+          <div class="text">
+            Dude, this is awesome. Thanks so much
+          </div>
+          <div class="actions">
+            <a class="reply">Reply</a>
+            <a class="edit">Edit</a>
+          </div>
+
+          <!-- Reply Form -->
+
+          <form class="ui reply form">
+            <div class="field">
+              <textarea rows="2">Dude, this is awesome. Thanks so much</textarea>
+            </div>
+            <div class="ui primary labeled submit icon button">
+              <i class="icon edit"></i> Edit Comment
+            </div>
+          </form>
+
+          <!-- Reply Form -->
+
+        </div>
+      </div>
+
+    </div>
 
   </div>
- -->
+
+
   <div class="ui inverted vertical footer segment">
     <div class="ui center aligned container">
       <div class="ui stackable inverted divided grid">
