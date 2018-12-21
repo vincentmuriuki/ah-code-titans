@@ -44,8 +44,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/visibility.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="/static/main.css">
-  <link rel="stylesheet" type="text/css" href="/static/article.css">
+  <link rel="stylesheet" type="text/css" href="static/main.css">
+  <link rel="stylesheet" type="text/css" href="static/article.css">
 
 </head>
 
@@ -79,7 +79,7 @@
 
         <div class="header item right floated user">
           <span class="user__name">joe-henderson</span>
-          <img class="ui avatar image user__image" src="./static/person.png">
+          <img class="ui avatar image user__image" src="static/person.png">
         </div>
       </div>
 
@@ -88,25 +88,6 @@
 
   <!-- Header Component -->
 
-  <!-- Header Placeholder Component -->
-  <div class="ui borderless main menu placeholder" style="display: none;">
-    <div class="ui text container">
-      <div class="header item">
-        Authors Haven
-      </div>
-
-      <a href="#" class="item">Blog</a>
-      <a href="#" class="item">Articles</a>
-
-      <div class="header item">
-        User
-        <img class="ui avatar image" src="./static/person.png">
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Header Placeholder Component -->
 
   <!-- Article Top -->
 
@@ -136,6 +117,12 @@
       <div class="ui time_to_read right aligned">
         <i class="clock icon"></i> 6 Minutes
       </div>
+
+      <span class="article__bookmark">
+        <i class="bookmark outline icon"></i>
+        bookmark
+      </span>
+
     </div>
 
     <div class="main__second">
@@ -333,7 +320,10 @@
         <i class="icon"></i>
       </div>
     </div>
-
+    
+    <div class="article__sharing">
+      <div class="ui massive heart rating" data-max-rating="1" style="margin:3px 0;"></div>
+    </div>
 
     <div class="article__sharing overlay">
       <div class="ui icon">
@@ -348,6 +338,9 @@
         </button>
         <button class="ui circular mail icon button">
           <i class="mail icon"></i>
+        </button>
+        <button class="ui circular bookmark icon button">
+          <i class="bookmark icon"></i>
         </button>
       </div>
     </div>
@@ -545,7 +538,7 @@
       <div class="ui stackable inverted divided grid">
 
         <div class="ui inverted section divider"></div>
-        <img src="./Sticky Example - Semantic_files/logo.png" class="ui centered mini image">
+
         <div class="ui horizontal inverted small divided link list">
           <a class="item" href="#">Site Map</a>
           <a class="item" href="#">Contact Us</a>

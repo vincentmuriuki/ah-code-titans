@@ -97,3 +97,8 @@
 .main__first{
     margin-bottom: 2rem;
 }
+
+.article__bookmark{
+    float:right;
+    margin: .3rem 1rem;
+}

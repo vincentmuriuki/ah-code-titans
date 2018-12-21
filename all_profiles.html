@@ -11,25 +11,46 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
         crossorigin="anonymous" />
 
-    <link rel="stylesheet" type="text/css" media="screen" href="static/login_signup.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/main.css">
 </head>
 
 <body>
+    <!-- Header Component -->
     <div class="ui borderless main menu">
-        <div class="ui text container">
+        <div class="ui container">
             <div class="header item">
                 Authors Haven
             </div>
 
-            <a href="#" class="item right floated">Home</a>
-            <a href="#" class="item right floated">Discover</a>
+            <div class="ui secondary menu right aligned">
+                <a class="active item">
+                    Home
+                </a>
+                <a class="item">
+                    Discover
+                </a>
 
-            <div class="header item right floated">
-                User
-                <img class="logo" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+                <div class="right menu">
+                    <div class="item">
+                        <div class="ui transparent icon input">
+                            <input type="text" placeholder="Search...">
+                            <a href="./search.html">
+                                <i class="search link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header item right floated user">
+                    <span class="user__name">joe-henderson</span>
+                    <img class="ui avatar image user__image" src="./static/person.png">
+                </div>
             </div>
+
         </div>
     </div>
+
+    <!-- Header Component -->
 
     <div class="ui grid centered">
         <div class="ui nine wide column divided demo items">
