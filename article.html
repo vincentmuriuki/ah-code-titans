@@ -44,6 +44,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/visibility.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/rating.min.js"></script>
 
+  <link rel="stylesheet" type="text/css" href="/static/main.css">
   <link rel="stylesheet" type="text/css" href="/static/article.css">
 
 </head>
@@ -67,16 +68,18 @@
 
         <div class="right menu">
           <div class="item">
-            <div class="ui icon input">
+            <div class="ui transparent icon input">
               <input type="text" placeholder="Search...">
-              <i class="search link icon"></i>
+              <a href="./search.html">
+                <i class="search link icon"></i>
+              </a>
             </div>
           </div>
         </div>
 
-        <div class="header item right floated">
-          User
-          <img class="logo" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        <div class="header item right floated user">
+          <span class="user__name">joe-henderson</span>
+          <img class="ui avatar image user__image" src="./static/person.png">
         </div>
       </div>
 
@@ -97,7 +100,7 @@
 
       <div class="header item">
         User
-        <img class="ui avatar image" src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+        <img class="ui avatar image" src="./static/person.png">
       </div>
 
     </div>
@@ -111,27 +114,38 @@
 
     <!-- Article Title -->
 
-    <h1 class="ui header centered">Sticky Example</h1>
+    <h1 class="ui header centered">The Future of Entertainment in the US</h1>
 
     <!-- Article Title -->
 
     <!-- Article Details -->
 
-    <p class="ui text full centered">By: John Doe</p>
-    <div class="ui labeled button" tabindex="0">
-      <div class="ui button">
-        <i class="heart icon"></i> Like
+    <div class="main__first">
+      <p class="ui text full centered">By: John Doe</p>
+      <div class="ui labeled button" tabindex="0">
+        <div class="ui button">
+          <i class="heart icon"></i> Like
+        </div>
+        <a class="ui basic label">
+          2,048
+        </a>
       </div>
-      <a class="ui basic label">
-        2,048
-      </a>
+
+      <div class="ui star rating right aligned" data-rating="3" data-max-rating="5"></div>
+
+      <div class="ui time_to_read right aligned">
+        <i class="clock icon"></i> 6 Minutes
+      </div>
     </div>
 
-    <div class="ui star rating right aligned" data-rating="3" data-max-rating="5"></div>
-
-    <div class="ui time_to_read right aligned">
-      <i class="clock icon"></i> 6 Minutes
+    <div class="main__second">
+      <div class="ui very relaxed horizontal list">
+        <div class="ui label">Lifestyle</div>
+        <div class="ui label">Balloons</div>
+        <div class="ui label">Entertainment</div>
+      </div>
     </div>
+
     <!-- Article Details -->
 
   </div>
@@ -319,7 +333,7 @@
         <i class="icon"></i>
       </div>
     </div>
-    
+
 
     <div class="article__sharing overlay">
       <div class="ui icon">
@@ -362,7 +376,7 @@
 
       <div class="comment">
         <a class="avatar">
-          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+          <img src="./static/person.png">
         </a>
         <div class="content">
           <a class="author">Matt</a>
@@ -393,7 +407,7 @@
 
       <div class="comment">
         <a class="avatar">
-          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+          <img src="./static/person.png">
         </a>
         <div class="content">
           <a class="author">Elliot Fu</a>
@@ -410,7 +424,7 @@
         <div class="comments">
           <div class="comment">
             <a class="avatar">
-              <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+              <img src="./static/person.png">
             </a>
             <div class="content">
               <a class="author">Jenny Hess</a>
@@ -430,7 +444,7 @@
 
       <div class="comment">
         <a class="avatar">
-          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+          <img src="./static/person.png">
         </a>
         <div class="content">
           <a class="author">Joe Henderson</a>
@@ -451,7 +465,7 @@
 
       <div class="comment">
         <a class="avatar">
-          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+          <img src="./static/person.png">
         </a>
         <div class="content">
           <a class="author">Joe Henderson</a>
@@ -471,7 +485,7 @@
 
       <div class="comment">
         <a class="avatar">
-          <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+          <img src="./static/person.png">
         </a>
         <div class="content">
           <a class="author">Joe Henderson</a>
@@ -503,7 +517,7 @@
 
           <div class="comment">
             <a class="avatar">
-              <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/512x512/plain/user.png">
+              <img src="./static/person.png">
             </a>
             <div class="content">
               <a class="author">Joe Henderson</a>
