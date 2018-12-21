@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Authors-Haven</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href=" https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900 " rel="stylesheet ">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q="
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="static/login_signup.css">
+    <script src="./static/app.js"></script>
+</head>
+
+<body>
+    <div class="ui large secondary pointing menu">
+
+        <a class="active item" data-tab="first"><i class="instagram outline icon"></i>Instagram</a>
+        <a class="item" data-tab="second"><i class="comments outline icon"></i>DIRECT</a>
+        <a class="item" data-tab="third"><i class="list icon"></i>ACTIVITY</a>
+
+        <div class="ui right item">
+            <div class="ui search transparent icon input">
+                <input type="text" placeholder="Search ..." class="prompt" /><i class="search link icon"></i>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="ui bottom attached tab active" data-tab="first">
+        <div class="ui container">
+            <div id="instafeed" class="ui three column doubling centered grid container">
+                <div class="column">
+                    <div class="ui centered fluid card">
+                        <div class="image">
+                            <img src="./static/train-dragon.jpg" />
+                        </div>
+                        <div class="content">
+                            <a class="header">How to train a dragon</a>
+                            <div class="description">
+                                Ever wondered how to train a dragon? This is how ...
+                            </div>
+                            <div class="meta">
+                                <span class="right floated date">3 days ago</span>
+                                <span class="ui black">7 min read</span>
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <div class="right floated author">
+                                <img class="ui avatar image" src="./static/user.png"> Bryce
+                            </div>
+                            </span>
+                            <span class="left floated">
+                                <i class="bookmark outline icon"></i>
+                                bookmark
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
