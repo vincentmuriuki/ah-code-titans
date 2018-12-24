@@ -2,6 +2,7 @@ import numpy
 import re
 
 from authors.apps.authentication.models import User
+from authors.apps.bookmark.models import Bookmark
 from authors.response import RESPONSE
 from rest_framework.response import Response
 from rest_framework import status
@@ -9,7 +10,6 @@ from rest_framework import serializers
 
 from .models import Article, Comment, CommentHistory
 from ..favorite.models import FavouriteArticle
-from ..bookmark.models import BookmarkArticle
 
 
 class TagListSerializer(serializers.Field):
@@ -145,12 +145,11 @@ class GetArticlesSerializer(serializers.ModelSerializer):
     def get_tag_list(self, article):
         return list(article.tag_list.names())
 
-    def get_bookmarked(self, instance):
-        user = self.context.get('request').user.id
-        bookmarked = BookmarkArticle.objects.filter(
-            user=user, bookmark=instance.slug).exists()
+    def get_bookmarked(self, article):
+        article_slug = article.slug
+        user_id = self.context.get('request').user.id
+        return Bookmark.objects.filter(user=user_id, slug=article_slug).exists()
 
-        return bookmarked
 
 
 class CommentSerializer(serializers.ModelSerializer):

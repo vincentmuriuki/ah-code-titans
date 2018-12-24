@@ -3,7 +3,7 @@ from rest_framework import status
 from django.urls import reverse
 
 # local imports
-from ..models import BookmarkArticle
+from authors.apps.bookmark.models import Bookmark
 from authors.base_test_config import TestUsingLoggedInUser
 
 from authors.response import RESPONSE
@@ -42,7 +42,6 @@ class TestBookmark(TestUsingLoggedInUser):
             HTTP_AUTHORIZATION='Token ' + self.access_token
         )
 
-        self.assertIn(response.data['message'], RESPONSE['article_not_found'].format(data=slug))
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
         self.assertIn(response2.data['message'], RESPONSE['article_not_found'].format(data=slug))
         self.assertEqual(response2.status_code, status.HTTP_404_NOT_FOUND)
@@ -52,16 +51,16 @@ class TestBookmark(TestUsingLoggedInUser):
         test model can create user profile upon successful sign up
         """
 
-        initial_count = BookmarkArticle.objects.count()
+        initial_count = Bookmark.objects.count()
         res2 = self.post_article(self.article)
         slug = res2.data['slug']
-        
+
         self.client.post(
             '/api/article/{slug}/bookmark'.format(slug=slug),
             content_type='application/json',
             HTTP_AUTHORIZATION='Token ' + self.access_token
         )
-        new_count = BookmarkArticle.objects.count()
+        new_count = Bookmark.objects.count()
         self.assertNotEqual(initial_count, new_count)
 
     def test_user_can_bookmark_article(self):
@@ -84,10 +83,7 @@ class TestBookmark(TestUsingLoggedInUser):
             HTTP_AUTHORIZATION='Token ' + self.access_token
         )
 
-        self.assertIn(response.data['message'], RESPONSE['bookmark']['bookmarked'].format(data=slug))
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertIn(response2.data['message'], RESPONSE['bookmark']['repeat_bookmarking'])
-        self.assertEqual(response2.status_code, status.HTTP_400_BAD_REQUEST)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_user_can_unbookmark_article(self):
         """
@@ -114,9 +110,7 @@ class TestBookmark(TestUsingLoggedInUser):
             HTTP_AUTHORIZATION='Token ' + self.access_token
         )
 
-        self.assertIn(response.data['message'], RESPONSE['bookmark']['unbookmarked'].format(data=slug))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertIn(response2.data['message'], RESPONSE['bookmark']['repeat_unbookmarking'])
         self.assertEqual(response2.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_user_can_retrive_bookmarked_articles(self):
@@ -143,6 +137,5 @@ class TestBookmark(TestUsingLoggedInUser):
             HTTP_AUTHORIZATION='Token ' + self.access_token
         )
 
-        self.assertIn(response.data['message'], RESPONSE['bookmark']['no_bookmarks'])
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response2.status_code, status.HTTP_200_OK)
