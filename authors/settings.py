@@ -28,7 +28,8 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     '127.0.0.1',
     'localhost',
-    'ah-codetitans.herokuapp.com'
+    'ah-codetitans.herokuapp.com',
+    'ah-codetitans-staging.herokuapp.com'
 ]
 
 # Application definition
@@ -178,10 +179,11 @@ SOCIAL_AUTH_PIPELINE = (
     'social_core.pipeline.user.user_details',
 )
 
-SOCIAL_AUTH_LOGIN_URL = '/user/login'
-SOCIAL_AUTH_LOGOUT_URL = '/user/login'
-SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/home'
-SOCIAL_AUTH_LOGIN_ERROR_URL = '/user/login'
+SOCIAL_AUTH_LOGIN_URL = '/api/auth/social'
+# SOCIAL_AUTH_LOGOUT_URL = '/api/auth/social/error'
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = '/api/auth/social'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/api/auth/social/new'
+SOCIAL_AUTH_LOGIN_ERROR_URL = '/api/auth/social/error'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
