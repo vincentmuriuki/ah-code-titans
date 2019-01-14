@@ -93,7 +93,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         # Use the `create_user` method we wrote earlier to create a new user.
-        return User.objects.create_user(**validated_data)
+        return User.objects.create_user(**validated_data, is_active=False)
 
     def get_token(self, obj):
         """ Get user access token

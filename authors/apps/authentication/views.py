@@ -1,23 +1,26 @@
-from rest_framework import status
-from rest_framework.generics import (RetrieveUpdateAPIView, CreateAPIView, UpdateAPIView, ListAPIView)
-from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.response import Response
-from django.core.mail import send_mail
+import os
 
-from .renderers import UserJSONRenderer
-from .token import account_activation_token
-from .models import User
-from .serializers import (
-    LoginSerializer, RegistrationSerializer, UserSerializer,
-    ResetSerializer
-)
-from ...settings import EMAIL_HOST_USER
-from .backends import Authentication
-from django.http import HttpResponse
 from django.contrib.auth.tokens import default_token_generator
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.core.mail import send_mail
+from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from rest_framework import status
+from rest_framework.generics import (CreateAPIView, ListAPIView,
+                                     RetrieveAPIView, RetrieveUpdateAPIView,
+                                     UpdateAPIView)
+from rest_framework.permissions import AllowAny, IsAuthenticated, IsAuthenticatedOrReadOnly
+from rest_framework.response import Response
+
+from ...settings import EMAIL_HOST_USER
+from .backends import Authentication
+from .models import User
+from .renderers import UserJSONRenderer
+from .serializers import (LoginSerializer, RegistrationSerializer,
+                          ResetSerializer, UserSerializer)
+from .token import account_activation_token
 
 
 class RegistrationAPIView(CreateAPIView):
@@ -224,3 +227,65 @@ class ActivateAccountAPIView(ListAPIView):
                     'successfully.'.format(account_details.username), status.HTTP_201_CREATED
                 )
         return HttpResponse('Invalid activation link')
+
+
+class SocialAuthView(RetrieveAPIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def get(self, request):
+        """
+        Social Authentication Frontend Redirect Endpoint
+
+        This endpoint redirects the user to the frontend url responsible for setting user
+        as authenticated.
+        """
+
+        if not request.user or not request.user.id:
+            if '_auth_user_id' in request.session:
+                user = User.objects.get(id=request.session['_auth_user_id'])
+
+                return redirect("{}?success=true&username={}&new_user=false".format(
+                    os.getenv("FRONTEND"),
+                    user.username
+                ))
+            else:
+                redirect("/api/auth/social/error")
+
+
+class SocialAuthNewUserView(RetrieveAPIView):
+    permission_classes = (IsAuthenticatedOrReadOnly,)
+
+    def get(self, request):
+        """
+        Social Authentication Frontend Redirect Endpoint
+
+        This endpoint redirects the user to the frontend url responsible for setting user
+        as authenticated.
+        """
+
+        if not request.user or not request.user.id:
+            if '_auth_user_id' in request.session:
+                user = User.objects.get(id=request.session['_auth_user_id'])
+
+                return redirect("{}/social/auth?success=true&username={}&new_user=true".format(
+                    os.getenv("FRONTEND"),
+                    user.username
+                ))
+                
+            else:
+                redirect("/api/auth/social/error")
+
+
+class SocialAuthErrorView(RetrieveAPIView):
+    permission_classes = (AllowAny,)
+
+    def get(self, request):
+        """
+        Social Authentication Error Frontend Redirect Endpoint
+
+        This endpoint redirects the user to the frontend to handle the output of the login error
+        """
+
+        return redirect("{}?success=false".format(
+            os.getenv("FRONTEND")
+        ))

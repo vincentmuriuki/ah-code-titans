@@ -2,7 +2,8 @@ from django.urls import path
 
 from .views import (
     LoginAPIView, RegistrationAPIView, UserRetrieveUpdateAPIView,
-    RequestResetAPIView, ResetPasswordAPIView, ActivateAccountAPIView
+    RequestResetAPIView, ResetPasswordAPIView, ActivateAccountAPIView, SocialAuthView,
+    SocialAuthErrorView, SocialAuthNewUserView
 )
 
 
@@ -17,4 +18,7 @@ urlpatterns = [
         "activate/account/<str:pk>/<str:token>",
         ActivateAccountAPIView.as_view(), name="activate_account"
     ),
+    path("auth/social", SocialAuthView.as_view(), name="social_auth"),
+    path("auth/social/new", SocialAuthNewUserView.as_view(), name="social_auth_new_user"),
+    path("auth/social/error", SocialAuthErrorView.as_view(), name="social_auth_error")
 ]
