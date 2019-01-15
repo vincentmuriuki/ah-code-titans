@@ -1,4 +1,5 @@
 # module import
+import os
 from django.urls import reverse
 from rest_framework import status
 
@@ -49,6 +50,7 @@ class TestResetPassword(TestConfiguration):
         response = self.submit_email(self.registered_user_email)
         global test_token
         test_token = response.json()['user'].get('linker')
+        test_token = test_token[:22] + 'api/' + test_token[22:]
 
     def test_user_enter_empty_field(self):
         response = self.edit_password(self.user_email[0])
