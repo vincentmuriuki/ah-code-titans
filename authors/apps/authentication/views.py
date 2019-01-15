@@ -142,9 +142,9 @@ class RequestResetAPIView(CreateAPIView):
         token = serializer.data.get('token')
 
         # Format the email
-        host = request.get_host()
+        host = os.getenv('FRONTEND')
         protocol = request.scheme
-        resetpage = protocol + '://' + host + '/api/resetpassword/' + token
+        resetpage = protocol + '://' + host + 'change_password/' + token
         subject = "Password Reset Request"
         message = (
             "Hello {user_data} you have requested for a password reset.\n"
@@ -152,7 +152,7 @@ class RequestResetAPIView(CreateAPIView):
             "Else ignore this request.\n "
             "The link expires in 1 hour".format(user_data=user_data['email'], link=resetpage))
         from_email = EMAIL_HOST_USER
-        to_list = [user_data['email'], EMAIL_HOST_USER]
+        to_list = [user_data['email']]
 
         # Send the email
         send_mail(
@@ -244,7 +244,7 @@ class SocialAuthView(RetrieveAPIView):
             if '_auth_user_id' in request.session:
                 user = User.objects.get(id=request.session['_auth_user_id'])
 
-                return redirect("{}?success=true&username={}&new_user=false".format(
+                return redirect("{}social/auth?success=true&username={}&new_user=false".format(
                     os.getenv("FRONTEND"),
                     user.username
                 ))
@@ -267,7 +267,7 @@ class SocialAuthNewUserView(RetrieveAPIView):
             if '_auth_user_id' in request.session:
                 user = User.objects.get(id=request.session['_auth_user_id'])
 
-                return redirect("{}/social/auth?success=true&username={}&new_user=true".format(
+                return redirect("{}social/auth/social/auth?success=true&username={}&new_user=true".format(
                     os.getenv("FRONTEND"),
                     user.username
                 ))
@@ -286,6 +286,6 @@ class SocialAuthErrorView(RetrieveAPIView):
         This endpoint redirects the user to the frontend to handle the output of the login error
         """
 
-        return redirect("{}?success=false".format(
+        return redirect("{}social/auth?success=false".format(
             os.getenv("FRONTEND")
         ))
