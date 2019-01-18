@@ -143,8 +143,7 @@ class RequestResetAPIView(CreateAPIView):
 
         # Format the email
         host = os.getenv('FRONTEND')
-        protocol = request.scheme
-        resetpage = protocol + '://' + host + 'change_password/' + token
+        resetpage = host + 'change_password/' + token
         subject = "Password Reset Request"
         message = (
             "Hello {user_data} you have requested for a password reset.\n"
