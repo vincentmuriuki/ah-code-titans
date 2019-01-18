@@ -2,7 +2,7 @@ import os
 
 from django.contrib.auth.tokens import default_token_generator
 from django.core.mail import send_mail
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.encoding import force_bytes
@@ -93,10 +93,10 @@ class LoginAPIView(CreateAPIView):
         # the registration endpoint. This is because we don't actually have
         # anything to save. Instead, the `validate` method on our serializer
         # handles everything we need.
-        
+
         serializer = self.serializer_class(data=user)
         serializer.is_valid(raise_exception=True)
-        
+
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
@@ -222,9 +222,8 @@ class ActivateAccountAPIView(ListAPIView):
             if account_details is not None and valid_token is not None:
                 account_details.is_active = True
                 account_details.save()
-                return HttpResponse(
-                    '{} your account has been activated '
-                    'successfully.'.format(account_details.username), status.HTTP_201_CREATED
+                return HttpResponseRedirect(
+                    'https://authors-haven-ct-staging.herokuapp.com/', status.HTTP_201_CREATED
                 )
         return HttpResponse('Invalid activation link')
 
@@ -271,7 +270,7 @@ class SocialAuthNewUserView(RetrieveAPIView):
                     os.getenv("FRONTEND"),
                     user.username
                 ))
-                
+
             else:
                 redirect("/api/auth/social/error")
 
