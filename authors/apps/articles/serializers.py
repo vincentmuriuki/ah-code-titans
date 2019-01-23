@@ -164,9 +164,7 @@ class CommentSerializer(serializers.ModelSerializer):
     )
 
     # This relates the comment to the author of the comment
-    user = serializers.PrimaryKeyRelatedField(
-        queryset=User.objects.all()
-    )
+    user = serializers.SerializerMethodField()
 
     # This is the parent comment id this comment may potentially be replying
     # to. This is optional.
@@ -177,7 +175,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Comment
-        fields = ['parent', 'text', 'article', 'user']
+        fields = ['id', 'parent', 'text', 'article', 'user']
 
     def validate_text(self, validated_data):
 
@@ -187,6 +185,17 @@ class CommentSerializer(serializers.ModelSerializer):
             )
 
         return validated_data
+
+    def get_user(self, data):
+        user = data.user
+        profile = user.profile
+        author = {
+            'username': user.username,
+            'company': profile.company,
+            'image': profile.image,
+        }
+
+        return author
 
     def update(self, instance, validated_data):
 
