@@ -153,6 +153,12 @@ class GetArticlesSerializer(serializers.ModelSerializer):
         return bookmarked
 
 
+class CreateCommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = '__all__'
+        model = Comment
+
+
 class CommentSerializer(serializers.ModelSerializer):
     """
     This serializer class is response for serializing comment
