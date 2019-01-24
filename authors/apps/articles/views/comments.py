@@ -80,6 +80,7 @@ class CommentsView(generics.ListCreateAPIView):
 
         # We initialize a comment serializer in order to run validations on the comment
         # data provided.
+
         comment_serializer = CreateCommentSerializer(data=comment)
 
         # This runs a validation check on the comment data provided. If it fails, it sends

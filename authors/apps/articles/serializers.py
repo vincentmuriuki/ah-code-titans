@@ -154,6 +154,17 @@ class GetArticlesSerializer(serializers.ModelSerializer):
 
 
 class CreateCommentSerializer(serializers.ModelSerializer):
+    article = serializers.PrimaryKeyRelatedField(
+        queryset=Article.objects.all()
+    )
+
+    # This is the parent comment id this comment may potentially be replying
+    # to. This is optional.
+    parent = serializers.IntegerField()
+
+    # This is the comment body
+    text = serializers.CharField(max_length=None, required=True)
+
     class Meta:
         fields = '__all__'
         model = Comment
